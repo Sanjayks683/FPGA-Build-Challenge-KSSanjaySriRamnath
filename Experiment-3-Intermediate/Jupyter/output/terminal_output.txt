@@ -1,0 +1,15 @@
+[*] Flashing FPGA bitstream for Experiment 3 (AES)...
+[+] FPGA Flashed! DONE LED active.
+Overlay loaded, AES engine at 0x40000000
+plaintext   00112233445566778899aabbccddeeff
+ciphertext  8ea2b7ca516745bfeafc49904b496089
+expected    8ea2b7ca516745bfeafc49904b496089
+decrypted   00112233445566778899aabbccddeeff
+encryption matches FIPS-197: PASS
+decryption returns the input: PASS
+message   : FPGA hardware encryption on the PYNQ-Z2 board!!!
+encrypted : 104615045468071bb2b9ae00f77888f8d96e29fa15d887ecfe101d854140b432be385b36418697c76e21e0d940642217
+decrypted : FPGA hardware encryption on the PYNQ-Z2 board!!!
+round trip: PASS
+3 blocks encrypted in 0.8 ms (0.27 ms per block)
+blocks processed since power up: 8

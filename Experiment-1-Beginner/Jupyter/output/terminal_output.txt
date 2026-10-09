@@ -1,0 +1,10 @@
+[*] Flashing FPGA bitstream for Experiment 1 (TRNG)...
+[+] FPGA Flashed! DONE LED active.
+Overlay loaded, TRNG at 0x40000000
+Read 100000 bytes in 2.0 s with window k = 6
+Ones:           50.02 %
+Entropy:        7.9982 / 8.0 bits per byte
+Longest run:    17 identical bits
+NIST frequency: PASS (p = 0.7628)
+NIST runs:      PASS (p = 0.5506)
+SHA-256 of the 100,000 bytes: 84aff8366f9fb517edf6d34706c0e748c579ebaee232a52a68a3b44718302f30

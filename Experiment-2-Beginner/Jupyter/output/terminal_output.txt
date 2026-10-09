@@ -1,0 +1,8 @@
+[*] Flashing FPGA bitstream for Experiment 2 (Huffman)...
+[+] FPGA Flashed! DONE LED active.
+Overlay loaded, compressor at 0x40000000
+Sent 600 bytes (4800 bits) in 0.04 s
+Got back 87 words holding 2764 bits
+Compression ratio: 1.74 to 1 (57.6 % of original size)
+Decoded text starts: the quick brown fox jumps over the lazy dog. huffman coding 
+PASS: all 600 bytes came back exactly as they went in

@@ -1,0 +1,17 @@
+Experiment 1 - Hardware True Random Number Generator: results on the board
+==========================================================================
+Board: PYNQ-Z2 (XC7Z020), 2026-09-18. Bitstream loaded over JTAG; 25,000 words (100,000 bytes) read from the DATA register at 0x4000_0008 through the ARM core, then tested on the PC with the notebook's code.
+
+Bytes tested            100,000
+Ones                    50.07 %  (ideal 50 %)
+Shannon entropy         7.9979 / 8 bits per byte
+Longest run             20 identical bits
+Max |autocorrelation|   0.0062  (lags 1-32)
+NIST frequency test     PASS  (p = 0.2386)
+NIST runs test          PASS  (p = 0.2600)
+Repeated 32-bit words   0 of 25,000
+SHA-256                 76ecf7502cb9bffe3dcbc68f220b35b9ff6f0a137c0ecbc52f7d9d5ba14fc96e
+
+First 16 words read from the FIFO (hex):
+  ca2e401f c84848ba 69a284bf 5e9744e9 2a490de4 7b7096e0 19b78843 dc96c9bd
+  9c2efbe6 4c5df436 ba5714ad 7d889afa ebfe1f89 2201df6e 22473e8d 93c60594

@@ -1,0 +1,42 @@
+Experiment 2 - Huffman Compression Accelerator: results on the board
+====================================================================
+Board: PYNQ-Z2 (XC7Z020), 2026-09-18. Bitstream loaded over JTAG (tools/jtag_load.tcl);
+each text written byte by byte to 0x08 and the words read from 0x0C through the ARM core
+(tools/p2_huffman_run.tcl). SW0 down, so the engine compresses.
+
+Notebook text (lower-case English)
+  input text        : 'the quick brown fox jumps over the lazy dog. huffman coding gives shor'...
+  bytes in          : 600 (hardware counter 600)
+  bits out          : 2764 in 87 words
+  bits per character: 4.61
+  size              : 57.6 % of the original
+  zlib -9 size      : 128 bytes (21.3 %)
+  matches the model : yes
+  decodes correctly : yes
+  first words       : 4e7f8959 bb985e5d ffd5865f 7ee7dfc5 8ecdfc04 ff9344ac
+  time over JTAG    : 2143 ms
+
+English paragraph (normal case)
+  input text        : 'A field programmable gate array is a chip whose logic can be changed a'...
+  bytes in          : 897 (hardware counter 897)
+  bits out          : 4066 in 128 words
+  bits per character: 4.53
+  size              : 56.7 % of the original
+  zlib -9 size      : 510 bytes (56.9 %)
+  matches the model : yes
+  decodes correctly : yes
+  first words       : 2ab0c5ff 7dd1c15b 32efb2eb 24936237 a1b977a4 f552c101
+  time over JTAG    : 3408 ms
+
+Verilog source code
+  input text        : "    assign shifted_code = {40'b0, final_code} << bit_count;\n    assign"...
+  bytes in          : 584 (hardware counter 584)
+  bits out          : 3449 in 108 words
+  bits per character: 5.91
+  size              : 73.8 % of the original
+  zlib -9 size      : 246 bytes (42.1 %)
+  matches the model : yes
+  decodes correctly : yes
+  first words       : ba112000 9aeaa219 164dff2c 217fc42f ebfb37fc 8e7f39f3
+  time over JTAG    : 2091 ms
+

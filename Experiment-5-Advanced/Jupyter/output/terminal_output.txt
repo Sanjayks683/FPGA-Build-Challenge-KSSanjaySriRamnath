@@ -1,0 +1,14 @@
+[*] Flashing FPGA bitstream for Experiment 5 (RL Agent)...
+[+] FPGA Flashed! DONE LED active.
+Overlay loaded, agent at 0x40000000
+episodes      : 2000
+goals reached : 1335
+best path     : 14 steps (shortest possible is 14)
+final epsilon : 0.050
+measured 4.9 ms for 2000 episodes on hardware
+[Ethernet Visualizer] Streaming live learning dynamics over Ethernet (8.0s)...
+[Ethernet Visualizer] GOAL REACHED! Target found in 14 steps! Total goals: 1336
+[+] Saved live visualizer frame: /tmp/pynq_runs/exp5_graph_2_live_visualizer_frame.jpg
+Maze 'Corridor Detour': best path = 14 steps
+Maze 'Center Barrier': best path = 14 steps
+Maze 'Zig-Zag Staircase': best path = 14 steps

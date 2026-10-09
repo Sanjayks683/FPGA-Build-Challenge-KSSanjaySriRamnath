@@ -1,0 +1,22 @@
+Experiment 4 - NeuroCore-32 RISC-V Processor: results on the board
+==================================================================
+Board: PYNQ-Z2 (XC7Z020), core clock 50 MHz, 2026-09-18. Bitstream loaded over JTAG
+(tools/jtag_load.tcl); programs loaded and run through the ARM core with tools/p4_riscv_run.tcl.
+
+PASS  Fibonacci: first 20 numbers            F19 = 4181
+PASS  Fibonacci: counters equal simulation   179 cycles, 171 instructions (sim: 179, 171)
+PASS  Bubble sort: array is 0 to 15          0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+PASS  Sensor: alarm flags                    0011010101100101
+PASS  Sensor: anomaly count                  8 readings >= 45 C
+PASS  All programs stopped at EBREAK         STATUS = 0x00000002
+
+Performance counters
+  program           cycles  instr stalls branch    IPC     time
+  Fibonacci            179    171      0     37  0.955   3.58 us
+  Bubble sort         1575   1411    120    439  0.896  31.50 us
+  Sensor threshold     224    186      0     57  0.830   4.48 us
+
+Fibonacci numbers : [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+Sorted array      : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+Sensor readings   : [38, 41, 47, 52, 44, 45, 39, 60, 33, 46, 50, 42, 40, 55, 36, 49]
+Alarm flags       : [0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1]  (8 anomalies)

@@ -1,0 +1,25 @@
+Experiment 3 - Pipelined AES-256 Encryption Engine: results on the board
+========================================================================
+Board: PYNQ-Z2 (XC7Z020), 2026-09-18. Bitstream loaded over JTAG (tools/jtag_load.tcl);
+commands run through the ARM core with tools/p3_aes_run.tcl.
+Reference: Python "cryptography" library, AES-256 in ECB mode.
+
+FIPS-197 appendix C.3
+  key        000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f
+  plaintext  00112233445566778899aabbccddeeff
+  expected   8ea2b7ca516745bfeafc49904b496089
+  FPGA       8ea2b7ca516745bfeafc49904b496089
+  decrypted  00112233445566778899aabbccddeeff
+
+PASS  FIPS-197 C.3 encryption                  got 8ea2b7ca516745bfeafc49904b496089
+PASS  FIPS-197 C.3 decryption                  got 00112233445566778899aabbccddeeff
+PASS  Key registers read back as zero          00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+PASS  Message ciphertext equals software AES   3 blocks
+PASS  Message decrypts back to the text        'FPGA hardware encryption on the PYNQ-Z2 board!!!'
+PASS  Random blocks encrypted correctly        40 of 40
+PASS  Random blocks decrypted correctly        40 of 40
+PASS  Avalanche blocks equal software AES      32 blocks
+PASS  Block counter                            120 blocks counted, 120 sent
+
+Avalanche effect: flipping one plaintext bit changed on average 65.7 of 128 ciphertext bits (min 52, max 78, 32 flips)
+Blocks processed in this test: 120; time over JTAG 3668 ms (the cipher itself needs 14 clocks = 140 ns per block)

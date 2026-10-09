@@ -1,0 +1,30 @@
+Experiment 5 - Hardware Q-Learning Agent: results on the board
+==============================================================
+Board: PYNQ-Z2 (XC7Z020), fabric clock 50 MHz, 2026-09-18. The steps of rl_demo.ipynb were run on
+the board with PYNQ; the log and graphs are in Jupyter/output. Checked with tools/p5_rl_results.py.
+
+PASS  Training ran all episodes        2000 episodes, 1335 reached the goal
+PASS  Shortest path found              14 steps (shortest possible 14)
+PASS  Board result equals simulation   1335 goals on the board, 1335 in simulation
+PASS  Live run reaches the goal        slow-mode episode found the goal in 14 steps
+PASS  New mazes loaded over AXI        Corridor Detour: 14, Center Barrier: 14, Zig-Zag Staircase: 14
+
+Final epsilon                     0.050
+Training time                     4.9 ms for 2000 episodes (measured from Python)
+Simulation (same RTL, Icarus)     1335 goals, best path 14, Q((7,6), RIGHT) = 96.37
+
+Board log (Jupyter/output/terminal_output.txt):
+  [*] Flashing FPGA bitstream for Experiment 5 (RL Agent)...
+  [+] FPGA Flashed! DONE LED active.
+  Overlay loaded, agent at 0x40000000
+  episodes      : 2000
+  goals reached : 1335
+  best path     : 14 steps (shortest possible is 14)
+  final epsilon : 0.050
+  measured 4.9 ms for 2000 episodes on hardware
+  [Ethernet Visualizer] Streaming live learning dynamics over Ethernet (8.0s)...
+  [Ethernet Visualizer] GOAL REACHED! Target found in 14 steps! Total goals: 1336
+  [+] Saved live visualizer frame: /tmp/pynq_runs/exp5_graph_2_live_visualizer_frame.jpg
+  Maze 'Corridor Detour': best path = 14 steps
+  Maze 'Center Barrier': best path = 14 steps
+  Maze 'Zig-Zag Staircase': best path = 14 steps

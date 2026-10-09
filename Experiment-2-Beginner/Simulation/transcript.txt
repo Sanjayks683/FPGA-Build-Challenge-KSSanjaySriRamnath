@@ -1,0 +1,16 @@
+Experiment 2 - Huffman Compression Accelerator (PYNQ-Z2)
+Simulation transcript, 2026-09-18 15:30
+Simulator: Icarus Verilog version 12.0 (devel) (s20150603-1539-g2693dd32b)
+
+> iverilog -g2012 -I ../Testbench -o huffman_sim.vvp -s huffman_tb -s wave_dump ../RTL/*.sv ../Testbench/huffman_tb.sv wave_dump.sv   (run inside Simulation/)
+../RTL/huffman_axi_wrapper.sv:143: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+
+> vvp huffman_sim.vvp
+VCD info: dumpfile huffman_wave.vcd opened for output.
+bytes in  = 32 (expected 32)
+bits out  = 179 (expected 179)
+status    = 00060002, 6 words waiting
+compressed 32 bytes (179 bits) into 6 words, all correct
+compression ratio: 179 bits out for 256 bits in
+PASS: all Huffman accelerator checks passed
+../Testbench/huffman_tb.sv:151: $finish called at 2785000 (1ps)

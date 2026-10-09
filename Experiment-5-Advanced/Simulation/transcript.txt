@@ -1,0 +1,44 @@
+Experiment 5 - Hardware Q-Learning Agent (PYNQ-Z2)
+Simulation transcript, 2026-09-18 19:31
+Simulator: Icarus Verilog version 12.0 (devel) (s20150603-1539-g2693dd32b)
+
+> iverilog -g2012 -o rl_sim.vvp -s rl_agent_tb -s wave_dump ../RTL/*.sv ../Testbench/rl_agent_tb.sv wave_dump.sv   (run inside Simulation/)
+../RTL/bellman_update.sv:121: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../RTL/rl_axi_wrapper.sv:177: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../RTL/rl_axi_wrapper.sv:177: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../RTL/rl_axi_wrapper.sv:177: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../RTL/rl_axi_wrapper.sv:177: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+
+> vvp rl_sim.vvp
+VCD info: dumpfile rl_wave.vcd opened for output.
+[PASS] default settings: alpha 0x1A, gamma 0xF3, 2000 episodes
+training on the maze built into the hardware...
+  episode 163, 0 goals reached
+  episode 282, 0 goals reached
+  episode 358, 0 goals reached
+  episode 420, 9 goals reached
+  episode 496, 60 goals reached
+  episode 589, 139 goals reached
+  episode 678, 214 goals reached
+  episode 768, 294 goals reached
+  episode 860, 372 goals reached
+  episode 952, 449 goals reached
+  episode 1049, 525 goals reached
+  episode 1142, 605 goals reached
+  episode 1236, 679 goals reached
+  episode 1328, 756 goals reached
+  episode 1422, 836 goals reached
+  episode 1512, 916 goals reached
+  episode 1605, 995 goals reached
+  episode 1700, 1072 goals reached
+  episode 1791, 1151 goals reached
+  episode 1882, 1231 goals reached
+  episode 1975, 1312 goals reached
+  episode 2000, 1335 goals reached
+finished: 2000 episodes, 1335 goals, best path 14 steps
+[PASS] the agent found the shortest path through the maze
+Q((7,6), RIGHT) = 96.37
+[PASS] the value of stepping into the goal was learned
+history entry 0: goal 1, 14 steps
+PASS: the hardware agent learned to solve the maze
+../Testbench/rl_agent_tb.sv:119: $finish called at 4407770000 (1ps)

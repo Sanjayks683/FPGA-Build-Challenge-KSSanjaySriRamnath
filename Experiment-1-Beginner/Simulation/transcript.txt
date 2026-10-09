@@ -1,0 +1,14 @@
+Experiment 1 - Hardware True Random Number Generator (PYNQ-Z2)
+Simulation transcript, 2026-09-18 14:55
+Simulator: Icarus Verilog version 12.0 (devel) (s20150603-1539-g2693dd32b)
+
+> iverilog -g2012 -o trng_sim.vvp -s trng_tb -s wave_dump ../RTL/*.sv ../Testbench/trng_tb.sv wave_dump.sv   (run inside Simulation/)
+../RTL/trng_axi_wrapper.sv:114: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+../RTL/trng_axi_wrapper.sv:114: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+
+> vvp trng_sim.vvp
+VCD info: dumpfile trng_wave.vcd opened for output.
+status = 004e0000 (78 words waiting)
+random words: 3a83365a cb930aca
+PASS: TRNG produced random words over AXI
+../Testbench/trng_tb.sv:97: $finish called at 100525000 (1ps)

@@ -1,0 +1,10 @@
+[*] Flashing FPGA bitstream for Experiment 4 (Neurocore RISC-V)...
+[+] FPGA Flashed! DONE LED active.
+Overlay loaded, processor at 0x40000000
+Fibonacci numbers from the FPGA:
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
+correct: PASS
+171 instructions in 179 cycles = 0.955 IPC
+array after sorting: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+correct: PASS
+1411 instructions in 1575 cycles, 120 stalls, 439 branches

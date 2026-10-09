@@ -1,0 +1,23 @@
+Experiment 3 - Pipelined AES-256 Encryption Engine (PYNQ-Z2)
+Simulation transcript, 2026-09-18 15:50
+Simulator: Icarus Verilog version 12.0 (devel) (s20150603-1539-g2693dd32b)
+
+> iverilog -g2012 -o aes_sim.vvp -s aes_tb -s wave_dump ../RTL/*.sv ../Testbench/aes_tb.sv wave_dump.sv   (run inside Simulation/)
+../RTL/aes_axi_wrapper.sv:164: sorry: constant selects in always_* processes are not currently supported (all bits will be included).
+
+> vvp aes_sim.vvp
+VCD info: dumpfile aes_wave.vcd opened for output.
+VCD warning: array word aes_tb.dut.u_axi_wrapper.out_words[0] will conflict with an escaped identifier.
+VCD warning: array word aes_tb.dut.u_axi_wrapper.out_words[1] will conflict with an escaped identifier.
+VCD warning: array word aes_tb.dut.u_axi_wrapper.out_words[2] will conflict with an escaped identifier.
+VCD warning: array word aes_tb.dut.u_axi_wrapper.out_words[3] will conflict with an escaped identifier.
+key schedule ready (status = 00000004)
+plaintext  00112233445566778899aabbccddeeff
+ciphertext 8ea2b7ca516745bfeafc49904b496089
+[PASS] encryption matches the FIPS-197 test vector
+decrypted  00112233445566778899aabbccddeeff
+[PASS] decryption recovered the original block
+[PASS] the key registers read back as zero
+blocks processed: 2
+ALL AES-256 VERIFICATION TESTS PASSED SUCCESSFULLY
+../Testbench/aes_tb.sv:151: $finish called at 2305000 (1ps)
